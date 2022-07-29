@@ -30,7 +30,10 @@ return require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 
 	-- tresitter
-	use 'nvim-treesitter/nvim-treesitter'
+	use {
+			'nvim-treesitter/nvim-treesitter',
+			run = ':TSUpdate'
+		}
 
 	-- telescope && suggested dependencies 
 	use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires ={{'nvim-lua/plenary.nvim'}}}
