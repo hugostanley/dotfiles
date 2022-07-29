@@ -11,6 +11,7 @@ a.k.a BetterVim
 ### Plugins
 1. Built-in LSP - just TJ Devries' recommendation
 2. Treesitter   - syntax highlighting
+3. Telescope		- easily browse through files
 3. Nvim-cmp     - completion
 4. Lua-snip     - snippets
 5. tokyonight   - tokiyonightu coloruschemu
