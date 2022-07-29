@@ -8,3 +8,8 @@ configs.setup{
 		enable = true,
 	}
 }
+
+vim.api.nvim_exec([[
+		set foldmethod=expr
+		set foldexpr=nvim_treesitter#foldexpr()
+]], true)
