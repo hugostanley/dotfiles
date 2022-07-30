@@ -7,3 +7,6 @@
    keysym Caps_Lock = Control_L
    add Lock = Caps_Lock
    add Control = Control_L
+
+	 keycode 133 = backslash bar backslash bar
+	 keycode 51 = Super_L

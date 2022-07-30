@@ -33,3 +33,8 @@ A window manager. for PRODUCTIVITY NO I3 GAPPERS HERE PLS. P.R.O.D.U.C.T.I.V.I.T
 
 (WIP)
 
+## XMODMAP
+For keyboard remappings
+
+1. Swapped **Backslash** and **Super key**
+2. Swapped **Left Control** and **Caps_Lock**
