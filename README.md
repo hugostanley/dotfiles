@@ -16,3 +16,20 @@ a.k.a BetterVim
 4. Lua-snip     - snippets
 5. tokyonight   - tokiyonightu coloruschemu
 
+# Fish Shell
+
+## Plugin Manager
+**Fisher** 
+
+### Plugins
+1. Tide        - prompt 
+2. Z           - file jumper
+3. exa         - better listing smthng
+4. Gogh				 - terminal colorscheme picker (TOKIYU NIGHTUUUU)	
+5. auto pair   - secret
+
+# i3
+A window manager. for PRODUCTIVITY NO I3 GAPPERS HERE PLS. P.R.O.D.U.C.T.I.V.I.T.Y
+
+(WIP)
+
