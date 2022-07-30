@@ -16,9 +16,9 @@ a.k.a BetterVim
 4. Lua-snip     - snippets
 5. tokyonight   - tokiyonightu coloruschemu
 
-# Fish Shell
+## Fish Shell
 
-## Plugin Manager
+### Plugin Manager
 **Fisher** 
 
 ### Plugins
