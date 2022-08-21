@@ -9,11 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Fira Code 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -23,6 +23,7 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+for_window [class="Google-chrome"] border none
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -51,12 +52,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+ bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 # used vim navigation for consistency
@@ -147,6 +148,12 @@ bindsym $mod+Shift+3 move container to workspace number $ws8
 bindsym $mod+Shift+2 move container to workspace number $ws9
 bindsym $mod+Shift+1 move container to workspace number $ws10
 
+assign [class="Google-chrome"] $ws2
+assign [class="Gnome-terminal"] $ws9
+assign [class="calibre"] $ws10
+assign [class="obsidian"] $ws8
+assign [class="Microsoft Teams - Preview"] $ws1
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -182,24 +189,46 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# finds out, if available
 bar {
         status_command i3status
+  
 }
 
 # idea is from https://gist.github.com/rometsch/6b35524bcc123deb7cd30b293f2088d8
 #keybinding to lock screen
 # -i (image) then path
 # -c (color) then 00000 (rgb)
-bindsym Control+$mod+l exec "i3lock -i ~/Pictures/Wallpapers/black_unity_22_wallpaper_mac.png"
+# bindsym Control+$mod+l exec "i3lock -i ~/Pictures/Wallpapers/black_unity_22_wallpaper_mac.png"
 
 # auto lock the screen using xautolock
-exec "xautolock -detectsleep -time 1 -locker 'i3lock -c 000000'"
+# exec "xautolock -detectsleep -time 1 -locker 'i3lock -c 000000'"
 
-# startup executions, sets dual monitor default, sets wallpaper
-exec "exrandr --output eDP1 --auto --right-of HDMI2"
-exec --no-startup-id nitrogen --restore
+# startup executions 
+## fixes dual monitor orientation
+exec "exrandr --output eDP1 --auto --right-of HDMI2" 
+## reloads previous nitrogen/wallpaper settings
+exec_always "nitrogen --restore"
 
 # brightness configuration - chec usr/share/intel something then intel 20 file, vim it
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1
+bindsym XF86MonBrightnessDown exec xbacklight -dec 1
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# key bind to manually suspend screen
+bindsym $mod+Control+l exec systemctl suspend
+
+exec "google-chrome"
+exec "gnome-terminal"
+exec "teams"
+exec "calibre"
+exec --no-startup-id "cd ~/Applications/ && ./Obsidian-0.15.9_0423cca626346c4685e3b68f67f1637f.AppImage"
+exec_always "xmodmap ~/.Xmodmap"
+
+workspace $ws9 output HDMI2  eDP1
+workspace $ws2 output HDMI2  eDP1
+workspace $ws8 output HDMI2  eDP1
+workspace $ws10 output HDMI2  eDP1

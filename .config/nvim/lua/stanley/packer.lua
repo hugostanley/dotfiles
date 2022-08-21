@@ -43,4 +43,15 @@ return require('packer').startup(function(use)
 
 	-- icons
 	use 'kyazdani42/nvim-web-devicons'
+
+ -- auto pairs
+	use {
+		"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+	}
+  use 'windwp/nvim-ts-autotag'
+
+	use('jose-elias-alvarez/null-ls.nvim')
+	use('MunifTanjim/prettier.nvim')
+
 end)
