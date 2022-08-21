@@ -206,8 +206,9 @@ bar {
 
 # startup executions 
 ## fixes dual monitor orientation
-exec "exrandr --output eDP1 --auto --right-of HDMI2" 
+## exec "exrandr --output eDP1 --auto --right-of HDMI2" 
 ## reloads previous nitrogen/wallpaper settings
+exec_always "xrandr --auto"
 exec_always "nitrogen --restore"
 
 # brightness configuration - chec usr/share/intel something then intel 20 file, vim it
