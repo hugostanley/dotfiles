@@ -1,5 +1,6 @@
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport=true
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
 
 local something = function ()
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
@@ -19,9 +20,24 @@ require"lspconfig".cssls.setup{
 }
 
 require"lspconfig".solargraph.setup{
-	capabilities = capabilities,
-	on_attach = something
+  capabilities = capabilities,
+  on_attach = something,
+  cmd = {
+    "solargraph", "stdio"
+  },
+  filetypes = {
+    "ruby"
+  }, 
+  init_options = {
+    formatting = true
+  }, 
+  settings = {
+    solargraph = {
+      diagnostics = true
+    }
+  }
 }
+
 require"lspconfig".html.setup{
 	capabilities = capabilities,
 	on_attach = something

@@ -13,6 +13,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 set.breakindent=true
+vim.opt.ignorecase = true
 
 set.autoindent=true
 

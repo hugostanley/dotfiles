@@ -3,8 +3,11 @@ if status is-interactive
 end
 
 #My custom aliases
-alias vim="nvim"
+alias v="nvim"
 alias ls="exa -l -a --icons"
+
+#set nvim as default
+export EDITOR=vi
 
 # Powerline
 export PATH="$PATH:/home/hugostanley/.local/bin/"
@@ -20,3 +23,7 @@ set _POWERLINE_SOURCED "/home/hugostanley/.local/lib/python3.10/site-packages/po
 alias config='/usr/bin/git --git-dir=/home/hugostanley/dotfiles --work-tree=/home/hugostanley'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+#. /home/hugostanley/.asdf/asdf.sh
+
+source ~/.asdf/asdf.fish
