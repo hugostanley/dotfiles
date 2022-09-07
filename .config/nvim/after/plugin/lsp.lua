@@ -22,20 +22,6 @@ require"lspconfig".cssls.setup{
 require"lspconfig".solargraph.setup{
   capabilities = capabilities,
   on_attach = something,
-  cmd = {
-    "solargraph", "stdio"
-  },
-  filetypes = {
-    "ruby"
-  }, 
-  init_options = {
-    formatting = true
-  }, 
-  settings = {
-    solargraph = {
-      diagnostics = true
-    }
-  }
 }
 
 require"lspconfig".html.setup{

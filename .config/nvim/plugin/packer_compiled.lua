@@ -102,7 +102,7 @@ _G.packer_plugins = {
   gruvbox = {
     loaded = true,
     path = "/home/hugostanley/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
+    url = "https://github.com/gruvbox-community/gruvbox"
   },
   ["null-ls.nvim"] = {
     loaded = true,

@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 
 	-- Colorschemes
 	use 'folke/tokyonight.nvim'
-	use 'morhetz/gruvbox'
+	use 'gruvbox-community/gruvbox'
 
 	--cmp
 	use 'hrsh7th/nvim-cmp' --cmp plugin

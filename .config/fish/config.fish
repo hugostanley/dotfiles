@@ -6,8 +6,11 @@ end
 alias v="nvim"
 alias ls="exa -l -a --icons"
 
-#set nvim as default
-export EDITOR=vi
+# KEYBINDINGSSSSSS
+### VI KEYBINDINGS
+# fish_vi_key_bindings
+### DEFAULT
+ fish_default_key_bindings
 
 # Powerline
 export PATH="$PATH:/home/hugostanley/.local/bin/"
