@@ -3,8 +3,18 @@ if status is-interactive
 end
 
 #My custom aliases
-alias v="nvim"
-alias ls="exa -l -a --icons"
+alias v="nvim" # general neovim
+alias vd="nvim ." # launch neovin in current directory
+alias ls="exa -l -a --icons" # exa
+alias r="ruby" # run ruby
+alias rcw="ruby -cw" # run ruby syntax checking
+alias ta="tmux attach" # attach to most recent session
+alias td="tmux new -d -s" # new sesh on bg; prov name
+alias ts="tmux new -s" # new sesh & attach; prov name
+alias tl="tmux ls" # list tmux seshs
+alias te="tmux detach" 
+
+alias lsp-rails="ln -s ~/for_rails/rails.rb ./config/definitions.rb"
 
 # KEYBINDINGSSSSSS
 ### VI KEYBINDINGS
@@ -28,5 +38,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 #. /home/hugostanley/.asdf/asdf.sh
+export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
 
 source ~/.asdf/asdf.fish
+export PATH="$HOME/tools/lua-language-server/bin:$PATH"

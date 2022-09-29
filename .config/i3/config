@@ -150,11 +150,12 @@ bindsym $mod+Shift+3 move container to workspace number $ws8
 bindsym $mod+Shift+2 move container to workspace number $ws9
 bindsym $mod+Shift+1 move container to workspace number $ws10
 
-assign [class="Google-chrome"] $ws2
+assign [class="firefox"] $ws2
 assign [class="Gnome-terminal"] $ws9
 assign [class="calibre"] $ws10
 assign [class="obsidian"] $ws8
 assign [class="Microsoft Teams - Preview"] $ws1
+assign [class="zoom "] $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -196,6 +197,9 @@ bar {
         status_command i3status
   
 }
+for_window [class="^.*"] border pixel 1
+default_border pixel 1
+default_floating_border pixel 1
 
 # idea is from https://gist.github.com/rometsch/6b35524bcc123deb7cd30b293f2088d8
 #keybinding to lock screen
@@ -214,10 +218,10 @@ exec_always "xrandr --auto"
 exec_always "nitrogen --restore"
 
 # brightness configuration - chec usr/share/intel something then intel 20 file, vim it
-bindsym XF86MonBrightnessUp exec xbacklight -inc 1
-bindsym XF86MonBrightnessDown exec xbacklight -dec 1
-#bindsym XF86MonBrightnessUp exec brightnessctl set +1
-#bindsym XF86MonBrightnessDown exec brightnessctl set 1-
+#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1
+#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set -q +1
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -q set 1-
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -226,10 +230,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # key bind to manually suspend screen
 bindsym $mod+Control+l exec systemctl suspend
 
-exec "google-chrome"
+# exec "google-chrome"
 exec "gnome-terminal"
 exec "teams"
 exec "calibre"
+exec "firefox"
 # exec --no-startup-id "cd ~/Applications/ && ./Obsidian-0.15.9_0423cca626346c4685e3b68f67f1637f.AppImage"
 exec_always "xmodmap ~/.Xmodmap"
 
@@ -237,3 +242,4 @@ workspace $ws9 output HDMI2  eDP1
 workspace $ws2 output HDMI2  eDP1
 workspace $ws8 output HDMI2  eDP1
 workspace $ws10 output HDMI2  eDP1
+

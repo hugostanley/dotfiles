@@ -1,4 +1,7 @@
-require('telescope').setup{
+local status, telescope = pcall(require, 'telescope')
+if (not status) then return end
+
+telescope.setup{
 	defaults={
 		prompt_prefix="$ "
 	},
@@ -6,6 +9,8 @@ require('telescope').setup{
 		i = {
 			["<c-a>"] = function() print('hello world') end -- woahh this is a lua function anonym func and it ends with th 'end'
 		}
-	}
+	},
+
 }
 require('telescope').load_extension('fzf')
+
