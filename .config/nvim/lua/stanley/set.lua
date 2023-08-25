@@ -1,41 +1,47 @@
 local set = vim.opt
 
+set.textwidth = 100
+set.colorcolumn = "100"
+
+set.relativenumber = true
 set.number = true
-set.relativenumber= true
 
-set.errorbells=false
+set.errorbells = false
 
-set.smarttab=true
-vim.opt.smartindent = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+set.smarttab = true
+set.smartindent = true
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
+set.cursorline = false
+set.cursorcolumn = false
+set.list = true
 
-set.breakindent=true
-vim.opt.ignorecase = true
+set.breakindent = true
+set.ignorecase = true
 
-set.autoindent=true
+set.autoindent = true
 
-set.guicursor = ""
-set.syntax="on"
+set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+set.syntax = "on"
 
 
-set.hlsearch=false
-set.incsearch=true
-set.smartcase=true
+set.hlsearch = false
+set.incsearch = true
+set.smartcase = true
 
-set.scrolloff=8
-set.signcolumn="yes"
-set.completeopt={"menuone","noinsert","noselect"}
-set.fileencoding="utf-8"
-set.splitbelow=true
-set.splitright=true
-set.termguicolors=true
-vim.g.mapleader=" "
+set.scrolloff = 8
+set.signcolumn = "yes"
+set.completeopt = { "menuone", "noinsert", "noselect" }
+set.fileencoding = "utf-8"
+set.splitbelow = true
+set.splitright = true
+set.termguicolors = true
+vim.g.mapleader = " "
 vim.cmd("let g:netrw_bufsettings='noma nomod nu nowrap ro nobl rnu'")
 vim.cmd("let g:netrw_banner=0")
+vim.cmd("let g:netrw_liststyle=0")
+vim.cmd("let g:netrw_keepdir=1")
 vim.cmd("let g:netrw_browse_split=20")
-vim.cmd("let g:airline_powerline_fonts=1")
 vim.cmd("set mouse=")
-vim.g.airline_theme="minimalist"
