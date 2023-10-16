@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>9", ":lua require('harpoon.ui').nav_file(2)<CR>")
 vim.keymap.set("n", "<leader>1", ":lua require('harpoon.ui').nav_file(4)<CR>")
 vim.keymap.set("n", "<leader>0", ":lua require('harpoon.ui').nav_file(3)<CR>")
 vim.keymap.set("n", "<leader>v", ":lua require('harpoon.mark').add_file()<CR>")
-vim.keymap.set("n", "<leader>e", ":E<CR>")
+vim.keymap.set("n", "<leader>e", ":Explore<CR>")
 vim.keymap.set("n", "<leader>a", ":ChatGPT<CR>")
 
 -- telescope remaps
@@ -33,7 +33,6 @@ vim.keymap.set("n", "<leader>cc", "<cmd>Telescope colorscheme<CR>")
 vim.keymap.set("n", "<S-l>", "<cmd>tabnext<CR>")
 vim.keymap.set("n", "<S-h>", "<cmd>tabprevious<CR>")
 
-vim.keymap.set("n", "<leader>fp", "<cmd>LspZeroFormat<CR>")
 -- git fugitive
 vim.keymap.set("n", "<leader>gs", "<cmd>0G<CR>")
 
