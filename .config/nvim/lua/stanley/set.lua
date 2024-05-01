@@ -1,7 +1,9 @@
 local set = vim.opt
+set.fileencoding = "utf-8"
+set.encoding = "utf-8"
 
-set.textwidth = 100
-set.colorcolumn = "100"
+set.textwidth = 80
+set.colorcolumn = "80"
 
 set.relativenumber = true
 set.number = true
@@ -17,6 +19,10 @@ set.expandtab = true
 set.cursorline = false
 set.cursorcolumn = false
 set.list = true
+set.listchars:append {
+    lead = "·",
+}
+
 
 set.breakindent = true
 set.ignorecase = true
@@ -34,7 +40,6 @@ set.smartcase = true
 set.scrolloff = 8
 set.signcolumn = "yes"
 set.completeopt = { "menuone", "noinsert", "noselect" }
-set.fileencoding = "utf-8"
 set.splitbelow = true
 set.splitright = true
 set.termguicolors = true

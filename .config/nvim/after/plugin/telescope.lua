@@ -4,7 +4,10 @@ if (not status) then return end
 telescope.setup {
     defaults = {
         prompt_prefix = "> ",
-        windblend = 50
+        windblend = 50,
+        file_ignore_patterns = {
+            "node_modules"
+        }
     },
     pickers = {
         find_files = {
@@ -15,7 +18,7 @@ telescope.setup {
     extensions = {
         file_browser = {
             -- disables netrw and use telescope-file-browser in its place
-            theme = "dropdown",
+            theme = "ivy",
             hijack_netrw = false,
             mappings = {
                 ["i"] = {

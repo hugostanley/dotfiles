@@ -13,6 +13,7 @@ alias td="tmux new -d -s" # new sesh on bg; prov name
 alias ts="tmux new -s" # new sesh & attach; prov name
 alias tl="tmux ls" # list tmux seshs
 alias te="tmux detach" 
+alias gc="git checkout"
 alias Gs="git status"
 alias Gcm="git commit -m"
 alias Ga="git add"
@@ -47,9 +48,12 @@ set LDLIBS "-lcrypt -lcs50 -lm"
 
 # starship init fish | source
 
+set -x PATH $HOME/.asdf/bin $PATH
+set -x PATH $HOME/.asdf/shims $PATH
+
 alias config='/usr/bin/git --git-dir=/home/hugostanley/dotfiles --work-tree=/home/hugostanley'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 
 # /home/hugostanley/.asdf/asdf.sh
 export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
@@ -58,6 +62,9 @@ source ~/.asdf/asdf.fish
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/tools/lua-language-server/bin:$PATH"
 export OPENAI_API_KEY="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"
+
+#GOLANG
+export PATH="$PATH:/usr/local/go/bin"
 
     # TokyoNight Color Palette
 #    set -l foreground c0caf5
@@ -104,3 +111,13 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+export KERL_BUILD_DOCS="yes"
